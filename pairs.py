@@ -10,11 +10,13 @@ def mod(val) -> bool:
     # only when the value don't fit in the category
     return ((int(val) % 2) != 0)
 pairs = Clasify()
+# Set the prefix for the data to analize and storage
+prefix = '../data/'
 # The current code only clasify even numbers
-pairs.getTypes('categories.txt')
-pairs.getValues('values.txt')
+pairs.getTypes(f'{prefix}categories.txt')
+pairs.getValues(f'{prefix}values.txt')
 pairs.relation(mod)
-pairs.getRelation('relations.csv')
+pairs.getRelation(f'{prefix}relations.csv')
 # Show the result
 for categories in pairs.rel.keys():
     print(f'Value: {categories}, Category: {pairs.rel[categories.__str__()]}')
