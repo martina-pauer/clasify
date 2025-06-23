@@ -5,11 +5,13 @@ class Clasify():
             Make your own clasifier with help
             of this class:
 
-                clasify.data values to clasify in different categories
+                Properties:
 
-                clasify.classes categories for clasify the values
+                    Clasify.data values to clasify in different categories
 
-                clasify.rel pair vallue to category
+                    Clasify.classes categories for clasify the values
+
+                    Clasify.rel pair vallue to category
         '''
         self.data : list = []
 
@@ -59,9 +61,8 @@ class Clasify():
 
     def relation(self, cond):
         '''
-            Make relations in clasify.rel dict with
-            a conditions and two functions to choose
-            as parameter.
+            Make relations in Clasify.rel dict with
+            a conditional function as parameter.
         '''
         for value in self.data:
             for category in self.classes:
@@ -71,3 +72,25 @@ class Clasify():
                     break
                 else:
                     self.rel.__setitem__(value.__str__(), category)
+
+    def getRelation(self, name : str):
+        '''
+            Note: Run Clasify.relation method before run this
+
+                    Add data to or create a new CSV file with all 
+                    values and categories of the Clasify instance object.
+        '''                
+        try:
+            # Create file if doesn't exist
+            data = open(name, 'x')
+            # Add first row with tags for identify values
+            data.write('Value,Category')
+        except:
+            # Open in append mode when the file exist    
+            data = open(name, 'a')
+        # Add the data from self.rel
+        for value in self.rel.keys():
+            data.write(f'\n{value},{self.rel[value]}')
+        # Free out file from memory of safe mode
+        data.close()
+        del data    
