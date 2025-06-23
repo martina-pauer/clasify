@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+import sys, os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from clasify import Clasify
 
 def mod(val) -> bool:
@@ -11,7 +15,7 @@ def mod(val) -> bool:
     return ((int(val) % 2) != 0)
 pairs = Clasify()
 # Set the prefix for the data to analize and storage
-prefix = '../data/'
+prefix = '/workspaces/clasify/data/'
 # The current code only clasify even numbers
 pairs.getTypes(f'{prefix}categories.txt')
 pairs.getValues(f'{prefix}values.txt')
