@@ -82,15 +82,22 @@ def foodie(name : str) -> bool:
     egg.grease = 0.00
 
     cow = Food('Meat Cow', 0.00, 0.00)
+    cow.group = 'Protein'
+    cow.grease = 1.00
 
     pig = Food('Pig Cow', 0.00, 0.00)
+    pig.group = 'Protein'
+    pig.grease = 0.00
 
-    fish = Food('Fish', 0.00)
+    fish = Food('Fish', 0.00, 0.00)
+    fish.group = 'Protein'
+    fish.grease = 0.00
 
-    flour = Food('Flour', 0.00)
+    flour = Food('Flour', 0.00, 0.00)
     flour.group = 'Grains'
+    flour.grease = 0.00
 
-    cheese = Food('Cheese', 0.00)
+    cheese = Food('Cheese', 0.00, 0.00)
     cheese.group = ''
     cheese.grease = 0.00
 
