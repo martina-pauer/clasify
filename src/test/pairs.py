@@ -24,3 +24,5 @@ pairs.getRelation(f'{prefix}relations.csv')
 # Show the result
 for categories in pairs.rel.keys():
     print(f'Value: {categories}, Category: {pairs.rel[categories.__str__()]}')
+# The path must be complete for get the right file    
+os.system('rm -R /workspaces/clasify/src/__pycache__')    
