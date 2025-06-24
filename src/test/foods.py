@@ -65,43 +65,43 @@ def foodie(name : str) -> bool:
     avocado.group = 'Oils'
     avocado.grease = 22.00
     
-    apple = Food('Apple', 0.00, 0.00)
+    apple = Food('Apple', 11.10, 0.00)
     apple.group = 'Fruits'
-    apple.grease = 0.00
+    apple.grease = 0.50
 
-    banana = Food('Banana', 0.00, 0.00)
+    banana = Food('Banana', 12.80, 0.00)
     banana.group = 'Fruits'
-    banana.grease = 0.00
+    banana.grease = 0.50
 
-    tomato = Food('Tomato', 0.00, 0.00)
+    tomato = Food('Tomato', 2.50, 0.02)
     tomato.group = 'Fruits'
-    tomato.grease = 0.00
+    tomato.grease = 0.30
 
-    egg = Food('Egg', 0.00, 0.00)
+    egg = Food('Egg', 1.1, 0.31)
     egg.group = 'Protein'
-    egg.grease = 0.00
+    egg.grease = 9.00
 
-    cow = Food('Meat Cow', 0.00, 0.00)
+    cow = Food('Meat Cow', 2.00, 3.00)
     cow.group = 'Protein'
-    cow.grease = 1.00
+    cow.grease = 7.00
 
-    pig = Food('Pig Cow', 0.00, 0.00)
+    pig = Food('Pig Cow', 12.00, 3.00)
     pig.group = 'Protein'
-    pig.grease = 0.00
+    pig.grease = 5.00
 
-    fish = Food('Fish', 0.00, 0.00)
+    fish = Food('Fish', 0.00, 32.00)
     fish.group = 'Protein'
-    fish.grease = 0.00
+    fish.grease = 0.70
 
-    flour = Food('Flour', 0.00, 0.00)
+    flour = Food('Flour', 0.00, 0.01)
     flour.group = 'Grains'
-    flour.grease = 0.00
+    flour.grease = 0.10
 
-    cheese = Food('Cheese', 0.00, 0.00)
+    cheese = Food('Cheese', 0.00, 2.42)
     cheese.group = 'Dairy'
-    cheese.grease = 0.00
+    cheese.grease = 25.00
 
-    bread = Food('Bread', 0.00, 0.00)
+    bread = Food('Bread', 3.40, 0.42)
     bread.group = 'Grains'
     bread.grease = 0.70
 
