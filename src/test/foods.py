@@ -64,11 +64,48 @@ def foodie(name : str) -> bool:
     avocado = Food('Avocado', 1.00, 0.00)
     avocado.group = 'Oils'
     avocado.grease = 22.00
+    
+    apple = Food('Apple', 0.00, 0.00)
+    apple.group = 'Fruits'
+    apple.grease = 0.00
+
+    banana = Food('Banana', 0.00, 0.00)
+    banana.group = 'Fruits'
+    banana.grease = 0.00
+
+    tomato = Food('Tomato', 0.00, 0.00)
+    tomato.group = 'Fruits'
+    tomato.grease = 0.00
+
+    egg = Food('Egg', 0.00, 0.00)
+    egg.group = 'Protein'
+    egg.grease = 0.00
+
+    cow = Food('Meat Cow', 0.00, 0.00)
+
+    pig = Food('Pig Cow', 0.00, 0.00)
+
+    fish = Food('Fish', 0.00)
+
+    flour = Food('Flour', 0.00)
+    flour.group = 'Grains'
+
+    cheese = Food('Cheese', 0.00)
+    cheese.group = ''
+    cheese.grease = 0.00
+
+    bread = Food('Bread', 0.00, 0.00)
+    bread.group = 'Grains'
+    bread.grease = 0.00
+
+    pizza = Food('pizza', 0.00, 0.00)
+    pizza.group = ''
+    pizza.grease = 0.00
 
     state = True
 
     for object in [avocado, apple, banana, tomato, egg, cow, pig, fish, flour, cheese, bread, pizza]:
-        if ((name == object.name) and (object.salt <= object.grease) and (object.sugar <= object.salt) and (object.grease <= object.sugar)):
+        if ((name == object.name) and ((object.salt > object.grease) or (object.salt > object.sugar) or (object.sugar > object.salt) or (object.sugar > object.sugar))):
             state = False
             break
 
