@@ -128,8 +128,7 @@ health.getValues(f'{data}/foods.txt')
 health.getTypes(f'{data}/status.txt')
 
 health.relation(foodie)
-print(health.rel)
-#health.getRelation(f'{data}/foods.csv')
+health.getRelation(f'{data}/foods.csv')
 
 del health
 # The path must be complete for get the right file    
