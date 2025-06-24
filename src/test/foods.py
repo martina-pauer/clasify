@@ -98,16 +98,16 @@ def foodie(name : str) -> bool:
     flour.grease = 0.00
 
     cheese = Food('Cheese', 0.00, 0.00)
-    cheese.group = ''
+    cheese.group = 'Dairy'
     cheese.grease = 0.00
 
     bread = Food('Bread', 0.00, 0.00)
     bread.group = 'Grains'
-    bread.grease = 0.00
+    bread.grease = 0.70
 
-    pizza = Food('pizza', 0.00, 0.00)
-    pizza.group = ''
-    pizza.grease = 0.00
+    pizza = Food('pizza', 5.00, 10.00)
+    pizza.group = 'Dairy'
+    pizza.grease = (cheese.grease + tomato.grease + bread.grease)
 
     state = True
 
