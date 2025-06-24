@@ -1,4 +1,4 @@
-Advocato
+Avocado
 Apple
 Banana
 Tomato
@@ -8,3 +8,5 @@ Pig Meat
 Fish
 Flour
 Cheese
+Bread
+Pizza
