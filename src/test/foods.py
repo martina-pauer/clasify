@@ -117,7 +117,7 @@ def foodie(name : str) -> bool:
 
     for object in [avocado, apple, banana, tomato, egg, cow, pig, fish, rice, flour, cheese, bread, pizza]:
         print(f'\t{object.getInfo()}\n')
-        if ((name == object.name) and ((object.salt > object.grease) or (object.salt > object.sugar) or (object.sugar > object.salt) or (object.sugar > object.sugar))):
+        if ((name == object.name) and (((object.salt > object.grease) and (object.salt > object.sugar)) or ((object.sugar > object.salt) and (object.sugar > object.grease)))):
             state = False
             break
 

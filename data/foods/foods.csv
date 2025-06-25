@@ -1,14 +1,14 @@
 Value,Category
-Avocado,Healthy
+Avocado,Unhealthy
 Apple,Healthy
 Banana,Healthy
 Tomato,Healthy
-Egg,Healthy
+Egg,Unhealthy
 Cow Meat,Unhealthy
 Pig Meat,Unhealthy
 Fish,Healthy
-Flour,Healthy
-Rice,Healthy
-Cheese,Healthy
+Flour,Unhealthy
+Rice,Unhealthy
+Cheese,Unhealthy
 Bread,Healthy
-Pizza,Healthy
+Pizza,Unhealthy
