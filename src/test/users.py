@@ -40,6 +40,7 @@ while (option.lower() == 's'):
     option = input('\nAre you wish continue? S/n: ')
 # After of get all the comments clasify each one    
 social.relation(getComment)
+#social.getRelation('data/comments.csv')
 
 print('\nThe user comments are of this way: \n')
 for text in social.rel.keys():
