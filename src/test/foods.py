@@ -105,13 +105,18 @@ def foodie(name : str) -> bool:
     bread.group = 'Grains'
     bread.grease = 0.70
 
-    pizza = Food('pizza', 5.00, 10.00)
+    pizza = Food('Pizza', 5.00, 10.00)
     pizza.group = 'Dairy'
     pizza.grease = (cheese.grease + tomato.grease + bread.grease)
 
+    rice = Food('Rice', 0.1, 0.01)
+    rice.group = 'Grains'
+    rice.grease = 0.5
+
     state = True
 
-    for object in [avocado, apple, banana, tomato, egg, cow, pig, fish, flour, cheese, bread, pizza]:
+    for object in [avocado, apple, banana, tomato, egg, cow, pig, fish, rice, flour, cheese, bread, pizza]:
+        print(f'\t{object.getInfo()}\n')
         if ((name == object.name) and ((object.salt > object.grease) or (object.salt > object.sugar) or (object.sugar > object.salt) or (object.sugar > object.sugar))):
             state = False
             break
