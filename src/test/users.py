@@ -12,11 +12,21 @@ def getComment(text : str) -> bool:
         Clasify user comments
     '''
     state = False
+
+    if re.match(, text):
+    #
+        state = True
+    elif re.match(, text):
+        state = True
     return state
 
 option = 's'
 
 social = Clasify()
+# Set all the kinds of user on social media
+social.newType('Hater')
+social.newType('Fan')
+social.newType('Spamer')
 # Get all the comments and who have written it
 while (option.lower() == 's'):
 
@@ -30,6 +40,6 @@ while (option.lower() == 's'):
 social.relation()
 
 for text in social.rel.keys():
-    print(f'[ "{text}" is a ({social.rel[text]}) comment ]\n')
+    print(f'[ "{text}" has written by a ({social.rel[text]}) user ]\n')
 # The path must be complete for get the right file    
 os.system('rm -R /workspaces/clasify/src/__pycache__')
