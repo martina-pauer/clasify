@@ -11,15 +11,15 @@ def getComment(text : str) -> bool:
     '''
         Clasify user comments
     '''
-    state = False
+    state = True
 
-    if re.match('[A-Z]+', text):
+    if re.search('[A-Z]+', text):
     # Hater category
         state = True
-    elif re.match('[a-z]', text):
+    elif re.search('[a-z]+', text):
     # Fan category
-        state = True
-    # When state is True stop of jump to next category    
+        state = False
+          
     return state
 
 option = 's'
@@ -32,8 +32,8 @@ social.newType('Spamer')
 # Get all the comments and who have written it
 while (option.lower() == 's'):
 
-    comment = input('Write comment: ')
-    name = input('Write user name: ')
+    comment = input('\n\tWrite comment: ')
+    name = input('\tWrite user name: ')
     
     social.newValue(f'{name} : {comment}')
 
