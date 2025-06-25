@@ -15,7 +15,7 @@ def mod(val) -> bool:
     return ((int(val) % 2) != 0)
 pairs = Clasify()
 # Set the prefix for the data to analize and storage
-prefix = '/workspaces/clasify/data/'
+prefix = '/workspaces/clasify/data/pairs/'
 # The current code only clasify even numbers
 pairs.getTypes(f'{prefix}categories.txt')
 pairs.getValues(f'{prefix}values.txt')
