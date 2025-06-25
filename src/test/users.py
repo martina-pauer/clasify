@@ -13,11 +13,13 @@ def getComment(text : str) -> bool:
     '''
     state = False
 
-    if re.match(, text):
-    #
+    if re.match('[A-Z]+', text):
+    # Hater category
         state = True
-    elif re.match(, text):
+    elif re.match('[a-z]', text):
+    # Fan category
         state = True
+    # When state is True stop of jump to next category    
     return state
 
 option = 's'
@@ -37,7 +39,7 @@ while (option.lower() == 's'):
 
     option = input('Are you wish continue? S/n: ')
 # After of get all the comments clasify each one    
-social.relation()
+social.relation(getComment)
 
 for text in social.rel.keys():
     print(f'[ "{text}" has written by a ({social.rel[text]}) user ]\n')
