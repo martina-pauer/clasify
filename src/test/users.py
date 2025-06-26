@@ -17,7 +17,7 @@ def is_that_type(text : str) -> bool:
     # Hater category
         state = True
     elif re.search('[a-z]+', text):
-    # Fan category
+    # Friendly category
         state = False
 
     return state
@@ -27,7 +27,7 @@ option = 's'
 social = Clasify()
 # Set all the kinds of user on social media
 social.newType('Hater')
-social.newType('Fan')
+social.newType('Friendly')
 social.newType('Spamer')
 # Get all the comments and who have written it
 while (option.lower() == 's'):
