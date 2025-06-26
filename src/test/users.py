@@ -55,7 +55,7 @@ while (option.lower() == 's'):
 # After of get all the comments clasify each one    
 social.relation(is_that_type)
 social.rel.update(obj.rel)
-social.getRelation('data/comments.csv')
+social.getRelation('data/users/comments.csv')
 
 print('\nThe user comments are of this way: \n')
 for text in social.rel.keys():
