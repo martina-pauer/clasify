@@ -7,7 +7,7 @@ from clasify import Clasify
 
 import re
 
-def getComment(text : str) -> bool:
+def is_that_type(text : str) -> bool:
     '''
         Clasify user comments
     '''
@@ -39,7 +39,7 @@ while (option.lower() == 's'):
 
     option = input('\nAre you wish continue? S/n: ')
 # After of get all the comments clasify each one    
-social.relation(getComment)
+social.relation(is_that_type)
 #social.getRelation('data/comments.csv')
 
 print('\nThe user comments are of this way: \n')
