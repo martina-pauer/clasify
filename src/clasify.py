@@ -71,7 +71,7 @@ class Clasify():
                     self.rel.__setitem__(value.__str__(), category)
                     break
                 else:
-                    self.rel.__setitem__(value.__str__(), category)
+                    self.rel.__setitem__(value.__str__(), category)        
 
     def getRelation(self, name : str):
         '''
