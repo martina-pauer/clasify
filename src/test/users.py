@@ -13,10 +13,10 @@ def is_that_type(text : str) -> bool:
     '''
     state = True
 
-    if re.search('([A-Z]+|odio|hate|maldito|mufa|diabolic|fuck|estúpido|stupid|idiot|idiota|disgust|annoying|asco|shame|blame|vergüenza|mierda|shit|basura|fucking|inútil|die|dead|muerte|kill|matar|destruir|destroy|\b[a-zA-Z0-9]*f[u|ú]ck\b|\b[a-zA-Z0-9]*shit\b|\b[a-zA-Z0-9]*damn\b|\b[a-zA-Z0-9]*hell\b|[А-Яа-яЁё]*бля[А-Яа-яЁё]*|\b[a-zA-Z0-9]*merde\b|\b[a-zA-Z0-9]*puta\b|\b[a-zA-Z0-9]*con\b|[a-zA-Z0-9]*scheiße[a-zA-Z0-9]*|\b[a-zA-Z0-9]*cazzo\b|[a-zA-Z0-9]*mierda[a-zA-Z0-9]*|[a-zA-Z0-9]*puto[a-zA-Z0-9]*|[a-zA-Z0-9]*verga[a-zA-Z0-9]*|\b[a-zA-Z0-9]*fuck\b|\b[a-zA-Z0-9]*damn\b|\b[a-zA-Z0-9]*hell\b|\b[a-zA-Z0-9]*bastard\b|\b[a-zA-Z0-9]*idiot\b|\b[a-zA-Z0-9]*stupid\b|[A-ZÁÉÍÓÚÜÑ]{3,}|[!¡?¿]{2,})', text):
+    if re.search('odio|hate|maldito|mufa|diabolic|fuck|estúpido|stupid|idiot|idiota|disgust|annoying|asco|shame|blame|vergüenza|mierda|shit|basura|fucking|inútil|die|dead|muerte|kill|matar|destruir|destroy|shit|damn|hell|[a-zA-Z0-9]*merde|[a-zA-Z0-9]*puta|[a-zA-Z0-9]*con|[a-zA-Z0-9]*scheiße[a-zA-Z0-9]*|[a-zA-Z0-9]*cazzo|[a-zA-Z0-9]*mierda[a-zA-Z0-9]*|[a-zA-Z0-9]*puto[a-zA-Z0-9]*|[a-zA-Z0-9]*verga[a-zA-Z0-9]*|[a-zA-Z0-9]*fuck|[a-zA-Z0-9]*damn|[a-zA-Z0-9]*hell|[a-zA-Z0-9]*bastard|[a-zA-Z0-9]*idiot|stupid', text):
     # Hater category
         state = True
-    elif re.search('[a-z]+', text):
+    elif re.search('bien|genial|good|great|love|gran|[a-zA-Z0-9]+|[a-zA-Z0-9áéíóúüñÁÉÍÓÚÜÑ.,?!]+|buen|felicitaciones|congratulations|excellent|excelente|saludos|encant|like|gusta|happy|feliz|amazing|increible|vida|alegr|happiness|vivir|estupendo|maravilloso|gorgeous|gracias|thank|\U0001F44D', text):
     # Friendly category
         state = False
 
