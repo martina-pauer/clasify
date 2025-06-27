@@ -86,7 +86,7 @@ mouse, capy = Animal('Mouse'), Animal('Capybara')
 cow.is_it_give_milk, capy.is_it_give_milk, python.is_it_give_milk = True, True, False
 mouse.is_it_give_milk, pla.is_it_give_milk, alli.is_it_give_milk = True, True, False
 
-chicken.feathers = True
+chicken.has_feathers = True
 rust.has_segmented_body = True
 # Add objects to list for manage names of animals, not object names
 objects = objects.__add__([cow, python, rust, chicken, pla, capy, mouse, octopus, alli])
