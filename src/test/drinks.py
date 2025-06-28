@@ -111,6 +111,7 @@ for drink in [mate, tom, coffee]:
 for drinks in [drinking_first, drinking_second, drinking_third]:
     
     drinks.relation(drinking)
+    drinks.getRelation('/workspaces/clasify/data/drinks/drinks.csv')
 
     for drink in drinks.rel.keys():
         print(f'\n\t{drink} is {drinks.rel[drink]}')    
