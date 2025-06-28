@@ -29,7 +29,7 @@ class Drinks():
 
         self.color : str = col
 
-        self.has_alochol: bool = False
+        self.has_alcohol: bool = False
 
         self.has_bubbles : bool = False
 
@@ -51,7 +51,7 @@ objects : list[Drinks] = []
 def drinking(name):
     '''
         Get drink object by name and set first category
-        that be more unhealthy if at least one logic
+        that be more strong if at least one logic
         property is true
     '''
     for obj in objects:
@@ -74,17 +74,46 @@ for drink in [water, milk, lima]:
     drinking_first.newValue(drink.name)
     objects.append(drink)
 
-drinking_first.relation(drinking)
-
 drinking_second = Clasify()
 
 drinking_second.newType('Spirit Drink')
 drinking_second.newType('Juice')
 
+beer = Drinks('Beer', 'golden')
+beer.setLogic(True, False, False)
+
+wine = Drinks('Wine', 'light smooth green')
+wine.setLogic(True, False, False)
+
+orange = Drinks('Orange Box', 'orange')
+
+for drink in [beer, orange, wine]:
+    drinking_second.newValue(drink.name)
+    objects.append(drink)
+
 drinking_third = Clasify()
 
 drinking_third.newType('Infusion')
 drinking_third.newType('Juice')
+
+coffee = Drinks('Coffee Cup', 'Brown')
+coffee.setLogic(False, False, True)
+
+mate = Drinks('Argentian Mate', 'Dark Military Green')
+mate.setLogic(False, False, True)
+
+tom = Drinks('Tomato Sauce', 'Strong Glowing Red')
+
+for drink in [mate, tom, coffee]:
+    drinking_third.newValue(drink.name)
+    objects.append(drink)
+
+for drinks in [drinking_first, drinking_second, drinking_third]:
+    
+    drinks.relation(drinking)
+
+    for drink in drinks.rel.keys():
+        print(f'\n\t{drink} is {drinks.rel[drink]}')    
 
 # The path must be complete for get the right file    
 os.system('rm -R /workspaces/clasify/src/__pycache__')
