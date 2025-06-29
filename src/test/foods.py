@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import sys, os
+import os
+import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -120,17 +121,18 @@ def foodie(name: str) -> bool:
         print(f'\t{object.get_info()}\n')
         if (
             (name == object.name) 
-                and 
-                (
-                    (
-                        (object.salt > object.grease) and (object.salt > object.sugar)
-                    ) 
-                    or 
-                    (
-                        (object.sugar > object.salt) and (object.sugar > object.grease)
+                and (
+                        (
+                            (object.salt > object.grease) 
+                            and (object.salt > object.sugar)
+                        ) 
+                        or 
+                        (
+                            (object.sugar > object.grease) 
+                            and (object.sugar > object.salt)
+                        )
                     )
-                )
-            ):
+                ):
             # The food is unhealth if sugar and salt is higher to other
             state = False
             break
