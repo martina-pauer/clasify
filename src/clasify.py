@@ -19,34 +19,34 @@ class Clasify():
 
         self.rel : dict = dict()
 
-    def newType(self, cla : str):
+    def new_type(self, cla : str):
         '''
             Add a new category  to the list
         '''
         if (not self.classes.__contains__(cla)):
             self.classes.append(cla.__str__())
 
-    def newValue(self, val):
+    def new_value(self, val):
         '''
             Add new values to the data list.
         '''
         if (not self.data.__contains__(val)):
             self.data.append(val)
 
-    def getValues(self, name : str) -> list:
+    def get_values(self, name : str) -> list:
         '''
             Get values from a file to clasify later
         '''
         values = open(name.__str__(), 'r')
         
         for line in values.readlines():
-            self.newValue(line.replace('\n', ''))
+            self.new_value(line.replace('\n', ''))
 
         values.close()
 
         return self.data
 
-    def getTypes(self, name : str) -> list:
+    def get_types(self, name : str) -> list:
         '''
             Get categories from a file to clasify values later
         '''
@@ -73,7 +73,7 @@ class Clasify():
                 else:
                     self.rel.__setitem__(value.__str__(), category)        
 
-    def getRelation(self, name : str):
+    def get_relation(self, name : str):
         '''
             Note: Run Clasify.relation method before run this
 
