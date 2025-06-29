@@ -44,12 +44,14 @@ for index in [3, 5, 6]:
 
 objects[1].has_fear = True
 
+objects[5].is_old_time = True
+
 def fiction(title) -> bool:
     '''
         Conditional function for select Fantasy or Terror
     '''
     for fic in objects:
-        if fic.name == title:
+        if fic.title == title:
             # Haven't mainly terror in the plot
             return not fic.has_fear
 
@@ -59,7 +61,7 @@ def real(title) -> bool:
         select Sci-Fi or Realism history
     '''
     for realist in objects:
-        if realist.name == title:
+        if realist.title == title:
             # Happens things that could be happen in a long future
             return realist.has_fiction
 
@@ -68,7 +70,7 @@ def reality(title) -> bool:
         Select between History or Information (non-fiction educative book)
     '''
     for so_real in objects:
-        if so_real.name == title:
+        if so_real.title == title:
             return so_real.is_old_time
 
 no_real = Clasify()
