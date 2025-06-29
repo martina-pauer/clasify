@@ -17,10 +17,10 @@ pairs = Clasify()
 # Set the prefix for the data to analize and storage
 prefix = '/workspaces/clasify/data/pairs/'
 # The current code only clasify even numbers
-pairs.getTypes(f'{prefix}categories.txt')
-pairs.getValues(f'{prefix}values.txt')
+pairs.get_types(f'{prefix}categories.txt')
+pairs.get_values(f'{prefix}values.txt')
 pairs.relation(mod)
-pairs.getRelation(f'{prefix}relations.csv')
+pairs.get_relation(f'{prefix}relations.csv')
 # Show the result
 for categories in pairs.rel.keys():
     print(f'Value: {categories}, Category: {pairs.rel[categories.__str__()]}')

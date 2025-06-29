@@ -14,7 +14,7 @@ def rel(val) -> bool:
         Make relation for isolated text
     '''
     return True
-def is_that_type(text : str) -> bool:
+def is_that_type(text: str) -> bool:
     '''
         Clasify user comments
     '''
@@ -25,13 +25,13 @@ def is_that_type(text : str) -> bool:
         state = True
     elif re.search('bien|genial|good|amo|great|love|gran|buen|felicitaciones|congratulations|excellent|excelente|saludos|encant|like|gusta|happy|feliz|amazing|increible|vida|alegr|happiness|vivir|estupendo|maravilloso|gorgeous|gracias|thank|\U0001F44D', text.lower()):
     # Friendly category
-        obj.newType('Friendly')
-        obj.newValue(text)
+        obj.new_type('Friendly')
+        obj.new_value(text)
         obj.relation(rel)
     elif re.search('ofrezco|vendo|vender|compra|(haz mi curso)', text.lower()):
         # Spamer category
-        obj.newType('Spamer')
-        obj.newValue(text)
+        obj.new_type('Spamer')
+        obj.new_value(text)
         obj.relation(rel)    
 
     return state
@@ -40,22 +40,22 @@ option = 's'
 
 social = Clasify()
 # Set all the kinds of user on social media
-social.newType('Hater')
-social.newType('Spamer')
-social.newType('Friendly')
-# Get all the comments and who have written it
+social.new_type('Hater')
+social.new_value('Spamer')
+social.new_value('Friendly')
+# Get anew_valueomments and who have written it
 while (option.lower() == 's'):
 
     comment = input('\n\tWrite comment: ')
     name = input('\tWrite user name: ')
     
-    social.newValue(f'{name} : {comment}')
+    social.new_value(f'{name} : {comment}')
 
     option = input('\nAre you wish continue? S/n: ')
 # After of get all the comments clasify each one    
 social.relation(is_that_type)
 social.rel.update(obj.rel)
-social.getRelation('data/users/comments.csv')
+social.get_relation('data/users/comments.csv')
 
 print('\nThe user comments are of this way: \n')
 for text in social.rel.keys():
