@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from clasify import Clasify
 
 class Food():
-    def __init__(self, nam : str, sug : float, sal : float):
+    def __init__(self, nam: str, sug: float, sal: float):
         '''
             Take as parameter the food name and how
             much sugar and salt has commonly in grams(g).
@@ -19,43 +19,38 @@ class Food():
 
             Properties:
 
-                Food.name : str, name of the food
+                Food.name: str, name of the food
 
-                Food.sugar : float, sugar more common measure (g, grams)
+                Food.sugar: float, sugar more common measure (g, grams)
 
-                Food.salt : float, salt more common measure (g, grams)
+                Food.salt: float, salt more common measure (g, grams)
 
-                Food.grease : float, grease more common measure (g, grams)
+                Food.grease: float, grease more common measure (g, grams)
 
-                Food.group : str, food group 
+                Food.group: str, food group 
 
-                    'Vegetables', 
-                    'Grains', 
-                    'Protein',
-                    'Fruits',
-                    'Dairy' 
-                    'Starchy', 
-                    'Oils'
-                    'Legumes'        
+                    'Vegetables', 'Grains', 'Protein',
+                    'Fruits', 'Dairy' 'Starchy', 
+                    'Oils', 'Legumes'        
         '''
-        self.name : str = nam
+        self.name: str = nam
 
-        self.sugar : float = sug
+        self.sugar: float = sug
 
-        self.salt : float = sal
+        self.salt: float = sal
 
-        self.grease : float = 0.00
+        self.grease: float = 0.00
 
-        self.group : str = 'Fruits'
+        self.group: str = 'Fruits'
 
-    def getInfo(self) -> str:    
+    def get_info(self) -> str:    
         '''
             Return a text with a resume of all
             the data of the object
         '''
         return f'\tThe {self.group}-like "{self.name}" has {self.sugar}g of sugar, {self.grease}g of grease and {self.salt}g of salt.'
 
-def foodie(name : str) -> bool:
+def foodie(name: str) -> bool:
     '''
         Define foods, compares names and Food object data
         for say if the food is Unhealthy
@@ -115,8 +110,14 @@ def foodie(name : str) -> bool:
 
     state = True
 
-    for object in [avocado, apple, banana, tomato, egg, cow, pig, fish, rice, flour, cheese, bread, pizza]:
-        print(f'\t{object.getInfo()}\n')
+    for object in [
+                        avocado, apple, banana, 
+                        tomato, egg, cow, 
+                        pig, fish, rice, 
+                        flour, cheese, bread, 
+                        pizza
+                ]:
+        print(f'\t{object.get_info()}\n')
         if ((name == object.name) and (((object.salt > object.grease) and (object.salt > object.sugar)) or ((object.sugar > object.salt) and (object.sugar > object.grease)))):
             state = False
             break
@@ -129,11 +130,11 @@ data = '/workspaces/clasify/data/foods'
 # Clasify objects
 health = Clasify()
 
-health.getValues(f'{data}/foods.txt')
-health.getTypes(f'{data}/status.txt')
+health.get_values(f'{data}/foods.txt')
+health.get_types(f'{data}/status.txt')
 
 health.relation(foodie)
-health.getRelation(f'{data}/foods.csv')
+health.get_relation(f'{data}/foods.csv')
 
 del health
 # The path must be complete for get the right file    
