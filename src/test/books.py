@@ -5,12 +5,78 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from clasify import Clasify
 
+class Book():
+    def __init__(self, name):
+        '''
+            Define characteristics about a book:
+
+                Book.title : str, book name
+
+                Book.has_fear : bool, if the book is creppy
+                
+                Book.has_real : bool, some real is in the book
+
+                Book.has_fiction : bool, very much fiction is present in the book
+
+                Book.is_old_time : bool, the history happens in an old time (the past) 
+        '''
+        self.title: str = name
+
+        self.has_fear: bool = False
+
+        self.has_real: bool = False
+
+        self.has_fiction: bool = False
+
+        self.is_old_time: bool = False    
+# Disclaimer: No All books are necessarily reals
+objects: list[Book] = [
+    Book('The Lord of the Rings: The Ring Fellowship'), Book('Dracula'), Book('Fahrenheit 451'),
+    Book('Jeff Bezos Biography'), Book('The Eternaut'), Book('Argentian from XIX century to present'),
+    Book('PEP 8 Style Guide'),
+    ]
+
+for index in [0, 1, 2, 4]:
+    objects[index].has_fiction = True
+
+for index in [3, 5, 6]:
+    objects[index].has_real = True
+
+objects[1].has_fear = True
+
+def fiction(title) -> bool:
+    '''
+        Conditional function for select Fantasy or Terror
+    '''
+    for fic in objects:
+        if fic.name == title:
+            # Haven't mainly terror in the plot
+            return not fic.has_fear
+
+def real(title) -> bool:
+    '''
+        Conditional function for Clasify.relation method
+        select Sci-Fi or Realism history
+    '''
+    for realist in objects:
+        if realist.name == title:
+            # Happens things that could be happen in a long future
+            return realist.has_fiction
+
+def reality(title) -> bool:
+    '''
+        Select between History or Information (non-fiction educative book)
+    '''
+    for so_real in objects:
+        if so_real.name == title:
+            return so_real.is_old_time
+
 no_real = Clasify()
 
 no_real.new_type('Fantasy')
 no_real.new_type('Terror')
 
-no_real.new_value('The Lord of the Rings')
+no_real.new_value('The Lord of the Rings: The Ring Fellowship')
 no_real.new_value('Dracula')
 
 some_real = Clasify()
