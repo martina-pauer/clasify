@@ -21,14 +21,14 @@ first_category = input('\tWrite first category: ')
 second_category = input('\tWrite second category: ')
 age_limit = int(input(f'\tHow much years need for be "{second_category}"?: '))
 # Define categories
-age.newType(first_category)
-age.newType(second_category)
+age.new_type(first_category)
+age.new_type(second_category)
 # Show result from 1 to 100 years
 for each in range(1, 101):
-    age.newValue(each)
+    age.new_value(each)
 # Make relations and output
 age.relation(is_age)
-age.getRelation(f'data/ages/sub-{age_limit}-{first_category}.csv')
+age.get_relation(f'data/ages/sub-{age_limit}-{first_category}.csv')
 for aging in age.rel.keys():
     print(f'{aging} years is "{age.rel[aging]}"')   
 # The path must be complete for get the right file    
