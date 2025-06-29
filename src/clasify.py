@@ -53,7 +53,7 @@ class Clasify():
         types = open(name.__str__(), 'r')
 
         for line in types.readlines():
-            self.newType(line.replace('\n', ''))
+            self.new_type(line.replace('\n', ''))
 
         types.close()
 

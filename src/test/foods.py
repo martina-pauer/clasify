@@ -118,7 +118,20 @@ def foodie(name: str) -> bool:
                         pizza
                 ]:
         print(f'\t{object.get_info()}\n')
-        if ((name == object.name) and (((object.salt > object.grease) and (object.salt > object.sugar)) or ((object.sugar > object.salt) and (object.sugar > object.grease)))):
+        if (
+            (name == object.name) 
+                and 
+                (
+                    (
+                        (object.salt > object.grease) and (object.salt > object.sugar)
+                    ) 
+                    or 
+                    (
+                        (object.sugar > object.salt) and (object.sugar > object.grease)
+                    )
+                )
+            ):
+            # The food is unhealth if sugar and salt is higher to other
             state = False
             break
 
