@@ -73,7 +73,7 @@ for other in ['Plane', 'Rocket', 'F1']:
 common_transport.relation(common)    
 top_transport.relation(top)
 # Create CSV file with clasification table
-common_transport.get_relation('/workspaces/clasify/data/vehicles.csv')
-top_transport.get_relation('/workspaces/clasify/data/vehicles.csv')
+common_transport.get_relation('/workspaces/clasify/data/vehicles/vehicles.csv')
+top_transport.get_relation('/workspaces/clasify/data/vehicles/vehicles.csv')
 # Clean cache
 os.system('rm -R /workspaces/clasify/src/__pycache__')
