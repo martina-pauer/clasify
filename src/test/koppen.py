@@ -12,23 +12,30 @@ def group_a(data: str) -> bool:
         Select Tropical or Arid climate
     '''
     summer = eval(data)
-    return (summer[0] >= 64.4 and summer[1] >= 2.4)    
+    return  (
+                    (summer[0] >= 64.4 and summer[1] >= 2.4)    
+                    and not (summer[0] > 50 and summer[1] <= 0.66)
+            )           
 
 def group_b(data: str) -> bool:
     '''
         Select Arid or Temperate climate
     '''
     spring = eval(data)
-    return  (
-                (spring[0] > 10 and spring[1] <= 0.66)
-                or not group_a(data)
-            )
+    return      (
+                    (spring[0] > 50 and spring[1] <= 0.66)
+                    and not (spring[0] <= 64.4 and spring[1] < 1.6)
+                )
 
 def group_c(data: str) -> bool:
     '''
         Select Arid or Continental(Polar) climate
     '''
-    return group_b(data)    
+    winter = eval(data)
+    return  (
+                (winter[0] > 50 and winter[1] <= 0.66)    
+                and not (winter[0] > 50 and winter[1] < 1.1811)
+            )    
 # Define Clasify objects with climate pairs in the Köppen climate clasification
 tropical = Clasify()
 arid_temperate = Clasify()
@@ -40,9 +47,9 @@ arid_continental.get_values('/workspaces/clasify/data/koppen/winter.txt')
 # Set categories
 tropical.new_type('Group A: Tropical')
 tropical.new_type('Group B: Arid')
-arid_temperate.new_type(tropical.data[1])
+arid_temperate.new_type('Group B: Arid')
 arid_temperate.new_type('Group C: Temperate')
-arid_continental.new_type(arid_temperate.data[0])
+arid_continental.new_type('Group B: Arid')
 arid_continental.new_type('Group D: Continental')
 # Clasify objects
 tropical.relation(group_a)
