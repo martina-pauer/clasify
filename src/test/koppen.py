@@ -40,6 +40,6 @@ arid_temperate.relation(group_b)
 arid_continental.relation(group_c)
 # Save all in CSV files
 for each in [tropical, arid_temperate, arid_continental]:
-    each.get_relation('/workspaces/clasify/data/koppen/')
+    each.get_relation('/workspaces/clasify/data/koppen/koppen_climate.csv')
 # Clean cache
 os.system('rm -R /workspaces/clasify/src/__pycache__')
