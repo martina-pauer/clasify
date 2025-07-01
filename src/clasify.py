@@ -88,9 +88,24 @@ class Clasify():
         except:
             # Open in append mode when the file exist    
             data = open(name, 'a')
+        # Auxiliar function for check if value is on file
+        def is_value_in_file(path: str, val: str):
+            obj = open(path, 'r')
+            result = False
+            
+            for line in obj.readlines():
+                if line.__contains__(val):
+                    result = True
+                    break
+
+            obj.close()
+
+            return result
         # Add the data from self.rel
         for value in self.rel.keys():
-            data.write(f'\n{value},{self.rel[value]}')
+            # Normalization: no add a duplicate value for save data integrity
+            if not is_value_in_file(name, value):
+                data.write(f'\n{value},{self.rel[value]}')
         # Free out file from memory of safe mode
         data.close()
         del data    
