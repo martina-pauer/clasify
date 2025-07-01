@@ -55,6 +55,21 @@ arid_continental.new_type('Group D: Continental')
 tropical.relation(group_a)
 arid_temperate.relation(group_b)
 arid_continental.relation(group_c)
+# Fix comma mistake that make unloadble the CSV file
+auxiliar = {}
+for trop in tropical.rel.keys():
+    auxiliar[trop.replace(', ', '°F average temperature & ').replace('(', '').replace(')', 'in monthly rain')] = tropical.rel[trop]
+tropical.rel = auxiliar
+
+auxiliar = {}
+for temp in arid_temperate.rel.keys():
+    auxiliar[temp.replace(', ', '°F average temperature & ').replace('(', '').replace(')', 'in monthly rain')] = arid_temperate.rel[temp]
+arid_temperate.rel = auxiliar
+
+auxiliar = {}
+for polar in arid_continental.rel.keys():
+    auxiliar[polar.replace(', ', '°F average temperature & ').replace('(', '').replace(')', 'in monthly rain')] = arid_continental.rel[polar]
+arid_continental.rel = auxiliar
 # Save all in CSV files
 for each in [tropical, arid_temperate, arid_continental]:
     each.get_relation('/workspaces/clasify/data/koppen/koppen_climate.csv')

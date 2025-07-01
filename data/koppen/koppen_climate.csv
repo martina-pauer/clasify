@@ -1,12 +1,12 @@
 Value,Category
-(64.4, 2.4),Group A: Tropical
-(64, 0.66),Group B: Arid
-(50.01, 0.66),Group B: Arid
-(65, 0.67),Group B: Arid
-(18, 1.6),Group C: Temperate
-(17, 6),Group C: Temperate
-(51, 0.1),Group C: Temperate
-(20, 1.6),Group C: Temperate
-(70, 3),Group C: Temperate
-(50, 0.10),Group D: Continental
-(50, 0.1),Group D: Continental
+64.4°F average temperature & 2.4in monthly rain,Group A: Tropical
+64°F average temperature & 0.66in monthly rain,Group B: Arid
+50.01°F average temperature & 0.66in monthly rain,Group B: Arid
+65°F average temperature & 0.67in monthly rain,Group B: Arid
+18°F average temperature & 1.6in monthly rain,Group C: Temperate
+17°F average temperature & 6in monthly rain,Group C: Temperate
+51°F average temperature & 0.1in monthly rain,Group C: Temperate
+20°F average temperature & 1.6in monthly rain,Group C: Temperate
+70°F average temperature & 3in monthly rain,Group C: Temperate
+50°F average temperature & 0.10in monthly rain,Group D: Continental
+50°F average temperature & 0.1in monthly rain,Group D: Continental

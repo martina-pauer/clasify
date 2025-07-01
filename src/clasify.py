@@ -11,7 +11,7 @@ class Clasify():
 
                     Clasify.classes categories for clasify the values
 
-                    Clasify.rel pair vallue to category
+                    Clasify.rel pair value to category
         '''
         self.data : list = []
 
