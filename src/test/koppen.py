@@ -7,26 +7,31 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from clasify import Clasify
 
 # Define conditional functions for clasification
-def group_a(name: str):
+def group_a(data: str):
     '''
         Select Tropical or Arid climate
     '''
-    pass
-def group_b(name: str):
+    summer = eval(data)
+
+def group_b(data: str):
     '''
         Select Arid or Temperate climate
     '''
-    pass
-def group_c(name: str):
+    spring = eval(data)
+
+def group_c(data: str):
     '''
-        Select Arid or Continental climate
+        Select Arid or Continental(Polar) climate
     '''
-    pass
+    winter = eval(data)
 # Define Clasify objects with climate pairs in the Köppen climate clasification
 tropical = Clasify()
 arid_temperate = Clasify()
 arid_continental = Clasify()
 # Set values for that objects (temperature in fahrenheit and monthly rain in inches)
+tropical.get_values('/workspaces/clasify/data/koppen/summer.txt')
+arid_temperate.get_values('/workspaces/clasify/data/koppen/spring.txt')
+arid_continental.get_values('/workspaces/clasify/data/koppen/winter.txt')
 # Set categories
 tropical.new_type('Group A: Tropical')
 tropical.new_type('Group B: Arid')
