@@ -1,0 +1,10 @@
+Milky Way: 1.0e11
+Andromeda: 1.0e12
+Triangulum: 4.0e10
+Large Magellanic Cloud: 3.0e9
+Small Magellanic Cloud: 7.0e8
+Sombrero: 8.0e10
+Whirlpool: 1.0e11
+Pinwheel: 1.0e11
+Messier 87: 1.2e12
+Centaurus A: 1.0e11
