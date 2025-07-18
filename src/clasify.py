@@ -108,4 +108,21 @@ class Clasify():
                 data.write(f'\n{value},{self.rel[value]}')
         # Free out file from memory of safe mode
         data.close()
-        del data    
+        del data 
+
+    def merge(self, source_object, conditional_functions : list):
+        '''
+            Join data and category relations from
+            one object and conditional functions
+            list to be more acurate and huge the
+            Clasify.rel dictionary
+        '''
+        # Add new categories and values from the source
+        self.classes = self.classes.__add__(source_object.classes)
+        self.data = self.data.__add__(source_object.data)
+        # Make new relations using conditional functions until get one true
+        for condition in conditional_functions:
+            self.relation(condition)
+            # Interrupt when the conditional function is true
+            if condition:
+                break
