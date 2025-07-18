@@ -123,6 +123,3 @@ class Clasify():
         # Make new relations using conditional functions until get one true
         for condition in conditional_functions:
             self.relation(condition)
-            # Interrupt when the conditional function is true
-            if condition:
-                break
