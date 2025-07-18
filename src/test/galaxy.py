@@ -51,6 +51,13 @@ common.relation(is_common)
 weird.relation(is_weird)
 # Fragment clasification
 common.get_relation('/workspaces/clasify/data/galaxy/galactical_common.csv')
-weird.get_relation('/workspaces/clasify/data/galaxy/galactical_weird.csv')    
+weird.get_relation('/workspaces/clasify/data/galaxy/galactical_weird.csv')
+# Merge objects and save results in a file apart
+common.merge(weird,     [
+                            is_common,
+                            is_weird
+                         ]
+            )
+common.get_relation('/workspaces/clasify/data/galaxy/galactical_merging.csv')    
 # Clean cache
 os.system('rm -R /workspaces/clasify/src/__pycache__')
