@@ -118,8 +118,14 @@ class Clasify():
             Clasify.rel dictionary
         '''
         # Add new categories and values from the source
-        self.classes = self.classes.__add__(source_object.classes)
-        self.data = self.data.__add__(source_object.data)
+        for category in source_object.classes:
+            if not self.classes.__contains__(category):
+                # Normalize data for prevent duplicated data
+                self.classes.append(category)
+        for value in source_object.data:
+            if not self.data.__contains__(value):
+                # Data Normalization
+                self.data.append(value)
         # Make new relations using conditional functions until get one true
         for condition in conditional_functions:
             self.relation(condition)
