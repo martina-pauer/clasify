@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from clasify import Clasify
 
-def is_common(galaxy: str):
+def is_common(galaxy: str) -> bool:
     '''
         Select between 'Spiral' or 'Eliptical'
         galaxy shape counting stars
@@ -20,7 +20,21 @@ def is_common(galaxy: str):
                 and stars > 3.0e9
             )
 
-def is_weird(galaxy: str):
+def is_mid(galaxy: str) -> bool:
+    '''
+        Say if a galaxy is Eliptical
+        counting the stars
+    '''
+    # Get only the stars count from short galaxy description
+    stars = float   (
+                        galaxy.replace(' ', '').replace('\n', '').split(':')[1]
+                    )
+    
+    return  (
+                stars >= 1.2e12
+            )
+
+def is_weird(galaxy: str) -> bool:
     '''
         Select Irregular or Spiral
     '''
@@ -55,6 +69,7 @@ weird.get_relation('/workspaces/clasify/data/galaxy/galactical_weird.csv')
 # Merge objects and save results in a file apart
 common.merge(weird,     [
                             is_weird,
+                            is_mid,
                             is_common
                          ]
             )
