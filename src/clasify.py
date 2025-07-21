@@ -110,22 +110,21 @@ class Clasify():
         data.close()
         del data 
 
-    def merge(self, source_object, conditional_functions : list):
+    def merge(self, source_object, conditional_functions: list):
         '''
             Join data and category relations from
             one object and conditional functions
             list to be more acurate and huge the
             Clasify.rel dictionary
         '''
-        # Add new categories and values from the source
-        for category in source_object.classes:
-            if not self.classes.__contains__(category):
-                # Normalize data for prevent duplicated data
-                self.classes.append(category)
-        for value in source_object.data:
-            if not self.data.__contains__(value):
-                # Data Normalization
-                self.data.append(value)
-        # Make new relations using conditional functions until get one true
-        for condition in conditional_functions:
+        # Make relation with conditional functions by separate and later join all
+        source_object.relation(conditional_functions[0])
+        self.relation(conditional_functions[conditional_functions.__len__() - 1])
+        # join data, classes and rel list from both objects into this object
+        self.data = self.data.__add__(source_object.data)
+        self.classes = self.classes.__add__(source_object.classes)
+        self.rel = self.rel.__add__(source_object.rel)
+        # make fixing to the relation with all the conditions between
+        for condition in range(1, conditional_functions[conditional_functions.__len__() - 1]):
+            # All central conditions are to fix clasification
             self.relation(condition)
