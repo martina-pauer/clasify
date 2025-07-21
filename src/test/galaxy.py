@@ -8,7 +8,7 @@ from clasify import Clasify
 
 def is_common(galaxy: str) -> bool:
     '''
-        Select between 'Spiral' or 'Eliptical'
+        Select between 'Spiral' or not
         galaxy shape counting stars
     '''
     stars = float   (
@@ -36,7 +36,7 @@ def is_mid(galaxy: str) -> bool:
 
 def is_weird(galaxy: str) -> bool:
     '''
-        Select Irregular or Spiral
+        Select Irregular or not
     '''
     stars = float   (
                         galaxy.replace(' ', '').replace('\n', '').split(':')[1]
@@ -53,7 +53,7 @@ common.new_type('Spiral')
 common.new_type('Eliptical')
 # Set weird clasification
 weird.new_type('Irregular')
-weird.new_type('Spiral')
+weird.new_type('Eliptical')
 # Get values with galaxy names and stars count
 for obj in     [
                     common,
