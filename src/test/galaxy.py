@@ -16,8 +16,8 @@ def is_common(galaxy: str) -> bool:
                     )
 
     return  (
-                stars < 1.2e12
-                and stars > 3.0e9
+                stars > 3.0e9
+                and stars < 1.2e12
             )
 
 def is_mid(galaxy: str) -> bool:
