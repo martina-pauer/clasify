@@ -13,11 +13,11 @@ class Clasify():
 
                     Clasify.rel pair value to category
         '''
-        self.data : list = []
+        self.data: list = []
 
-        self.classes : list[str] = []
+        self.classes: list[str] = []
 
-        self.rel : dict = dict()
+        self.rel: dict = {}
 
     def new_type(self, cla : str):
         '''
@@ -123,8 +123,8 @@ class Clasify():
         # join data, classes and rel list from both objects into this object
         self.data = self.data.__add__(source_object.data)
         self.classes = self.classes.__add__(source_object.classes)
-        self.rel = self.rel.__add__(source_object.rel)
+        self.rel.update(source_object.rel)
         # make fixing to the relation with all the conditions between
-        for condition in range(1, conditional_functions[conditional_functions.__len__() - 1]):
+        for condition_number in range(1, conditional_functions.__len__() - 1):
             # All central conditions are to fix clasification
-            self.relation(condition)
+            self.relation(conditional_functions[condition_number])

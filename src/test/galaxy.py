@@ -50,7 +50,7 @@ common = Clasify()
 weird = Clasify()
 # Set common clasification
 common.new_type('Spiral')
-common.new_type('Eliptical')
+common.new_type('Irregular')
 # Set weird clasification
 weird.new_type('Irregular')
 weird.new_type('Eliptical')
@@ -68,9 +68,9 @@ common.get_relation('/workspaces/clasify/data/galaxy/galactical_common.csv')
 weird.get_relation('/workspaces/clasify/data/galaxy/galactical_weird.csv')
 # Merge objects and save results in a file apart
 common.merge(weird,     [
-                            is_weird,
                             is_mid,
-                            is_common
+                            is_common,
+                            is_weird
                          ]
             )
 common.get_relation('/workspaces/clasify/data/galaxy/galactical_merging.csv')    
