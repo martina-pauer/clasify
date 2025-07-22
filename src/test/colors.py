@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from clasify import Clasify
-
 def color_compare(color_blocks: list[int], color: int) -> bool:
     '''
         Compare the first two colors searching match
@@ -36,7 +31,7 @@ class Color():
         blocks = [red, green, blue]
         current_block = blocks[0]
 
-        for block_number in range(0, 4):
+        for block_number in range(0, 2):
             current_block = blocks[block_number]
             # The loop only run for the first five when this has meaning
             if current_block < blocks[block_number + 1]:
@@ -67,4 +62,46 @@ class Color():
                     self.warming_points >= min_points        
                     or self.predominant().__contains__('red')
                     or self.predominant().__contains__('green')
-                )    
+                )
+# Run only in this script when import the name is module name
+if __name__ == '__main__':
+    # Execute in this main script only
+    import random
+    import os
+    import sys
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+    from clasify import Clasify
+
+    test = Clasify()
+    
+    test.new_type('Danger')
+    test.new_type('Calm')
+
+    minimum = 300
+
+    def warmar(points: str):
+        '''
+            When the warming points are
+            greater or equal to 300 is
+            dangerously warm
+        '''
+        return points >= minimum
+    
+    for color in range(0, 10):
+        # Generate 10 random colors
+        obj =  Color    (
+                            # Generate blocks of two hexadecimals digits
+                            hex(random.randint(16, 255)).replace('0x', '')
+                            + hex(random.randint(16, 255)).replace('0x', '')
+                            + hex(random.randint(16, 255)).replace('0x', '')
+                        )
+        # Add the warming of color
+        obj.warm(minimum)
+        test.new_value(obj.warming_points)
+        print(f'#{obj.code} has {obj.warming_points} warming points')
+    # Make comparations for see if a color is so warm (potentialy dangerous)
+    test.relation(warmar)
+    # Save results and clean
+    prefix = '/workspaces/clasify'
+    test.get_relation(f'{prefix}/data/colors/color_warming.csv')
+    os.system(f'rm -R {prefix}/src/__pycache__')
