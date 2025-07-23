@@ -43,13 +43,13 @@ class Color():
         # Add color name when the first two are equal to color block
         if  color_compare(blocks, red):
             result += 'red'
-            self.warming_points += (3 * red)
+            self.warming_points += (5 * red)
         if  color_compare(blocks, green):
             result += 'green'
-            self.warming_points += (2 * red)    
+            self.warming_points += (red // 2)    
         if color_compare(blocks, blue):
             result += 'blue'
-            self.warming_points += red
+            self.warming_points += (red // 5)
 
         return result
 
@@ -77,14 +77,15 @@ if __name__ == '__main__':
     test.new_type('Danger')
     test.new_type('Calm')
 
-    minimum = 300
+    minimum = 700
 
     def warmar(points: str):
         '''
             When the warming points are
-            greater or equal to 300 is
+            greater or equal to minimum is
             dangerously warm
         '''
+        points = int(points.split(' ')[2])
         return points >= minimum
     
     for color in range(0, 10):
@@ -97,8 +98,9 @@ if __name__ == '__main__':
                         )
         # Add the warming of color
         obj.warm(minimum)
-        test.new_value(obj.warming_points)
-        print(f'#{obj.code} has {obj.warming_points} warming points')
+        output = (f'#{obj.code} has {obj.warming_points} warming points')
+        print(output)
+        test.new_value(output)
     # Make comparations for see if a color is so warm (potentialy dangerous)
     test.relation(warmar)
     # Save results and clean
