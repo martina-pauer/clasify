@@ -63,6 +63,17 @@ class Color():
                     or self.predominant().__contains__('red')
                     or self.predominant().__contains__('green')
                 )
+
+import sys
+
+def warmar(points: str):
+    '''
+        When the warming points are
+        greater or equal to minimum is
+        dangerously warm
+    '''
+    points = int(points.split(' ')[2])
+    return points >= int(sys.argv[2])
 # Run only in this script when import the name is module name
 if __name__ == '__main__':
     # Execute in this main script only
@@ -77,17 +88,6 @@ if __name__ == '__main__':
     test.new_type('Danger')
     test.new_type('Calm')
 
-    minimum = 700
-
-    def warmar(points: str):
-        '''
-            When the warming points are
-            greater or equal to minimum is
-            dangerously warm
-        '''
-        points = int(points.split(' ')[2])
-        return points >= minimum
-    
     for color in range(0, 10):
         # Generate 10 random colors
         obj =  Color    (
