@@ -15,8 +15,9 @@ minimum = int(sys.argv[2])
 analize.new_type(f'Hight Temperature (warm) {minimum.__str__()}')
 analize.new_type(f'Low Temperature (cold) {minimum.__str__()}')
 # Get the hexadecimal codes and save to the analize object
-for width_pixels in range(0, source_image.width):
-    for height_pixels in range(0, source_image.height):
+for width_pixels in range(0, 300):
+    # Analize the a reduced image for optimization
+    for height_pixels in range(0, 250):
         # Extract data from RGB color matrix
         color_code = list(source_image.getpixel((width_pixels, height_pixels)))
         for block in range(0, 3):

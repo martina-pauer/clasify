@@ -85,6 +85,8 @@ if __name__ == '__main__':
 
     test = Clasify()
     
+    minimum = 700
+
     test.new_type('Danger')
     test.new_type('Calm')
 
