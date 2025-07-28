@@ -12,8 +12,8 @@ analize = Clasify()
 source_image = Image.open(sys.argv[1].__str__()).convert('RGB')
 minimum = int(sys.argv[2])
 # Create difference between has more or les than minimum warming points
-analize.new_type(f'Hight Temperature (warm) {minimum.__str__()}')
-analize.new_type(f'Low Temperature (cold) {minimum.__str__()}')
+analize.new_type(f'Light {minimum.__str__()}')
+analize.new_type(f'Dark {minimum.__str__()}')
 # Get the hexadecimal codes and save to the analize object
 for width_pixels in range(0, 300):
     # Analize the a reduced image for optimization
@@ -32,10 +32,14 @@ for width_pixels in range(0, 300):
                 color_code[block] = color_code[block].replace(color_code[block][0], '')   
         # Use color logic in my class for help to the output    
         color_code = color_code[0] + color_code[1] + color_code[2]
-        palette  = Color(color_code)
-        palette.warm(minimum)
+        # Use different data to analize 'warming', 'bright'
+        analized = 'bright'
+        #palette  = Color(color_code)
+        #palette.warm(minimum)
+        # From 3 499 525 points is light elsewhere dark
+        points = int(color_code, 16) // 16
         # Save value in object in a format useful for the future very descriptive
-        analize.new_value(f'#{color_code} has {palette.warming_points} warming points and {minimum.__str__()} minimum')    
+        analize.new_value(f'#{color_code} has {points} {analized} points and {minimum.__str__()} minimum')    
 # Save data from images in a CSV file apart
 analize.relation(warmar)
 analize.get_relation(f'{prefix}/data/colors/image_data.csv')
