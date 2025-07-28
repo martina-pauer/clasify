@@ -4,7 +4,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PIL import Image
 from clasify import Clasify
-from colors import Color, warmar
+from colors import warmar
 
 prefix = '/workspaces/clasify'
 analize = Clasify()
@@ -34,8 +34,6 @@ for width_pixels in range(0, 300):
         color_code = color_code[0] + color_code[1] + color_code[2]
         # Use different data to analize 'warming', 'bright'
         analized = 'bright'
-        #palette  = Color(color_code)
-        #palette.warm(minimum)
         # From 3 499 525 points is light elsewhere dark
         points = int(color_code, 16) // 16
         # Save value in object in a format useful for the future very descriptive
