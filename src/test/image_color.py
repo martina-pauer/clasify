@@ -35,19 +35,12 @@ for width_pixels in range(0, 300):
         # Use different data to analize 'warming', 'bright'
         analized = 'Nature'
         # From 701 points is nature elsewhere tech
-        points =    (
-                        int(color_code[1], 16) 
-                        + 573
-                        -   (
-                                int(color_code[1], 16)
-                                + 446
-                            )    
-                    )
+        points = int(color_code[1], 16) + 573    
         # Save value in object in a format useful for the future very descriptive
         analize.new_value(f'#{color_code} has {points} {analized} points and {minimum.__str__()} minimum')    
 # Save data from images in a CSV file apart
 analize.relation(warmar)
 analize.get_relation(f'{prefix}/data/colors/image_data.csv')
 source_image.close()
-# Clean cache when is no needed more
-os.system(f'rm -R "{prefix}/src/__pycache__" "{prefix}/src/test/__pycache__"')
+# Clean cache
+os.system(f'rm -R {prefix}/src/__pycache__ && rm -R {prefix}/src/test/__pycache__')
