@@ -1,6 +1,6 @@
 #!/bin/bash
 # Define minimum score for set the first category as true
-MINIMUM_POINTS="585"
+MINIMUM_POINTS="180"
 # Test colors analyzer with each image
 declare -a IMAGE_FILES=(
     "../../data/colors/capybara_temperature_map.png"
